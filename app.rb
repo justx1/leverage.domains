@@ -16,6 +16,10 @@
 require "sinatra"
 
 get "/" do
-  "Hello world!"
+	if request.host == "leverage.domains"
+		"Monetize your domains. "
+	else
+		"This domain is for sale!! Host #{request.host} Referrer #{request.referrer}"
+	end
 end
 # [END app]
